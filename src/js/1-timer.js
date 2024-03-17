@@ -3,6 +3,10 @@ import flatpickr from "flatpickr";
 
 import "flatpickr/dist/flatpickr.min.css";
 
+
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
+
 let userSelectedDate;
 let timerInterval;
 
@@ -16,7 +20,10 @@ const options = {
       userSelectedDate = selectedDates[0];
       const currentDate = new Date();
       if (userSelectedDate < currentDate) {
-        window.alert("Please choose a date in the future");
+        iziToast.error({
+          title: "Error",
+          message: "Please choose a date in the future",
+        });
         disableStartButton();
       } else {
         enableStartButton();
@@ -78,7 +85,7 @@ const options = {
     const hour = minute * 60;
     const day = hour * 24;
  
-    
+
     const days = Math.floor(ms / day);
     const hours = Math.floor((ms % day) / hour);
     const minutes = Math.floor((ms % hour) / minute);
