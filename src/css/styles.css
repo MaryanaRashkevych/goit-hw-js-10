@@ -75,3 +75,19 @@
     font-size: 16px;
     color: darkgreen;
   }
+
+  .form{
+    margin: 30px 40px;
+    max-width: 300px;
+  }
+
+.submit-btn{
+margin-top: 30px;
+margin-left: 70px;
+height: 30px;
+background-color: darkgreen 1px solid;
+
+}
+.input-delay{
+    width: 220px;
+}
